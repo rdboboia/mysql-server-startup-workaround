@@ -31,4 +31,4 @@ Now, here's what my script does:
       - If the user agrees, it will stop the service.
     - If the service was not running, it will start it.
 
-BTW: I tryied to make the script as easy to understand as possible, so feel free to check it out and edit it if needed.
+BTW: I tried to make the script as easy to understand as possible, so feel free to check it out and edit it if needed.
