@@ -12,16 +12,12 @@ Observed behaviour:
   - The service seems to start properly (checking in Service app it appears as started) but when trying to connect to the server from MySQL Workbench it seems to enter in a loop and freezes (also uses a lot of CPU).
 
 Possible fixes:
-  - Change the "automatic" startup service setting to "manual/on demand" and manually manage the service(start/stop) from the Windows Services Application.
-    - Or you can use the script I'll provide in this repo to avoid using the Services app (does the same thing at its core though).
-
-Possible fixes:
   - Letting Windows still manage this service.
     - Change the MySQL service startup setting from "automatic" to "automatic (delayed)".
       - While not perfect, this seems like a good fix. The only problem that I have with this is that Windows delays its start around 2 minutes after you're already logged in, so you can't access it right away. If this is not a problem for you, then I think it's a clean and easy fix.
   - Managing the service manually from the Services app.
     - Change the MySQL service startup setting to "manual/on demand".
-      - If you don't mind to open the Services app each time you have to start the server, then this could work for you. I personally find it some kind of a hassle, specially when you have to start it with admin privileges and put your admin account password in since you can't toggle any service withoud admin rights.
+      - If you don't mind to open the Services app each time you have to start the server, then this could work for you. I personally find it some kind of a hassle, specially when you have to start it with admin privileges and put your admin account password in since you can't toggle any service without admin rights.
   - Managing the service manually with a batch script.
     - Since I'm kinda lazy, I don't really feel like going into the Services app each time I have to start/stop MySQL Server's service, so I came up with a script to do it for me. If you're not logged in an admin account you still have to start the script with admin privileges (and use that annoying password), but at least you can save some time by not starting the Services app and searching for the desired service.
 
@@ -29,7 +25,7 @@ Now, here's what my script does:
   - First it configures the service name which will be started or stopped (you can change this if you want to use this script for other service).
   - Then it checks for admin privileges.
     - If doesn't have admin rights, it will just display the service's status.
-  - Assuming it has admin rights, it will disable the service's "automatic startup" (no reason to start a service that won't work properly). Note that this could be done manually and only once, but since it doens't really affect the execution time and I wanted to make it as easy as possible for the people this is the way this version will be. Maybe later this week I'll put this in a separate script so that it doesn't perform the same thing again and again if not needed.
+  - Assuming it has admin rights, it will disable the service's "automatic startup" (no reason to start a service that won't work properly). Note that this could be done manually and only once, but since it doesn't really affect the execution time and I wanted to make it as easy as possible for the people this is the way this version will be. Maybe later this week I'll put this in a separate script so that it doesn't perform the same thing again and again if not needed.
   - It will try to start the service.
     - If the service is already running it will ask the user if he wants to stop it.
       - If the user agrees, it will stop the service.
