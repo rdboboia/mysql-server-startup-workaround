@@ -25,7 +25,7 @@ Now, here's what my script does:
   - First it configures the service name which will be started or stopped (you can change this if you want to use this script for other service).
   - Then it checks for admin privileges.
     - If doesn't have admin rights, it will just display the service's status.
-  - Assuming it has admin rights, it will disable the service's "automatic startup" (no reason to start a service that won't work properly). Note that this could be done manually and only once, but since it doesn't really affect the execution time and I wanted to make it as easy as possible for the people this is the way this version will be. Maybe later this week I'll put this in a separate script so that it doesn't perform the same thing again and again if not needed.
+  - Assuming it has admin rights, it will disable the service's "automatic startup" (no reason to start a service that won't work properly). Note that this could be done manually and only once, but since it doesn't really affect the execution time and I wanted to make it as easy as possible for people this is the way this version will be. Maybe later this week I'll put this in a separate script so that it doesn't perform the same thing again and again if not needed.
   - It will try to start the service.
     - If the service is already running it will ask the user if he wants to stop it.
       - If the user agrees, it will stop the service.
